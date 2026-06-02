@@ -1,8 +1,9 @@
-package de.tum.aet.devops25.w07.controller;
+package de.tum.aet.devops26.w06.controller;
 
-import de.tum.aet.devops25.w07.entity.UserPreferences;
-import de.tum.aet.devops25.w07.service.UserPreferenceService;
 import org.springframework.web.bind.annotation.*;
+
+import de.tum.aet.devops26.w06.entity.UserPreferences;
+import de.tum.aet.devops26.w06.service.UserPreferenceService;
 
 @RestController
 @RequestMapping("/preferences")

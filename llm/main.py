@@ -4,9 +4,9 @@ import requests
 from typing import Dict, Any, List, Optional
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
-from langchain.llms.base import LLM
 from langchain_core.prompts import PromptTemplate
-from langchain.callbacks.manager import CallbackManagerForLLMRun
+from langchain_core.language_models.llms import LLM
+from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 
 # Environment configuration
 CHAIR_API_KEY = os.getenv("CHAIR_API_KEY")

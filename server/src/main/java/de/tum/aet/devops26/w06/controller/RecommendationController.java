@@ -1,15 +1,15 @@
-package de.tum.aet.devops25.w07.controller;
-
-import de.tum.aet.devops25.w07.entity.UserPreferences;
-import de.tum.aet.devops25.w07.dto.Dish;
-import de.tum.aet.devops25.w07.service.CanteenService;
-import de.tum.aet.devops25.w07.service.LLMRecommendationService;
-import de.tum.aet.devops25.w07.service.UserPreferenceService;
+package de.tum.aet.devops26.w06.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import de.tum.aet.devops26.w06.dto.Dish;
+import de.tum.aet.devops26.w06.entity.UserPreferences;
+import de.tum.aet.devops26.w06.service.CanteenService;
+import de.tum.aet.devops26.w06.service.LLMRecommendationService;
+import de.tum.aet.devops26.w06.service.UserPreferenceService;
 
 import java.util.List;
 import java.util.Map;

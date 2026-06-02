@@ -14,7 +14,7 @@ This project includes:
 ## Prerequisites
 
 - Node.js (v22 or later)
-- Java JDK 21+
+- Java JDK 25+
 - Python 3.x
 - Gradle
 - Docker and Docker Compose
@@ -26,8 +26,8 @@ This project includes:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/w07-template.git
-cd w07-template
+git clone https://github.com/AET-DevOps26/w06-template
+cd w06-template
 ```
 
 ### Client Setup

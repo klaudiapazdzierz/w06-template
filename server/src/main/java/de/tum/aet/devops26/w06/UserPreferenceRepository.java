@@ -1,7 +1,8 @@
-package de.tum.aet.devops25.w07;
+package de.tum.aet.devops26.w06;
 
-import de.tum.aet.devops25.w07.entity.UserPreferences;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import de.tum.aet.devops26.w06.entity.UserPreferences;
 
 /*
     Required for interacting with the database.

@@ -1,13 +1,14 @@
-package de.tum.aet.devops25.w07;
+package de.tum.aet.devops26.w06;
 
-import de.tum.aet.devops25.w07.client.LLMRestClient;
-import de.tum.aet.devops25.w07.dto.Dish;
-import de.tum.aet.devops25.w07.service.LLMRecommendationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import de.tum.aet.devops26.w06.client.LLMRestClient;
+import de.tum.aet.devops26.w06.dto.Dish;
+import de.tum.aet.devops26.w06.service.LLMRecommendationService;
 
 import java.util.Arrays;
 import java.util.List;

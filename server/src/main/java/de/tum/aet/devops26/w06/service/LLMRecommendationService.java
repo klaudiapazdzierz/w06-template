@@ -1,8 +1,9 @@
-package de.tum.aet.devops25.w07.service;
+package de.tum.aet.devops26.w06.service;
 
-import de.tum.aet.devops25.w07.client.LLMRestClient;
-import de.tum.aet.devops25.w07.dto.Dish;
 import org.springframework.stereotype.Service;
+
+import de.tum.aet.devops26.w06.client.LLMRestClient;
+import de.tum.aet.devops26.w06.dto.Dish;
 
 import java.util.List;
 import java.util.stream.Collectors;

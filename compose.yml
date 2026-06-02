@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/aet-devops25/w07-template/server:latest
+    image: ghcr.io/aet-devops26/w06-template/server:latest
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
 
   client:
-    image: ghcr.io/aet-devops25/w07-template/client:latest
+    image: ghcr.io/aet-devops26/w06-template/client:latest
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -38,7 +38,7 @@ services:
     restart: unless-stopped
 
   llm:
-    image: ghcr.io/aet-devops25/w07-template/llm:latest
+    image: ghcr.io/aet-devops26/w06-template/llm:latest
     build:
       context: ./llm
       dockerfile: Dockerfile

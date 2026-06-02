@@ -1,11 +1,12 @@
-package de.tum.aet.devops25.w07.controller;
+package de.tum.aet.devops26.w06.controller;
 
-import de.tum.aet.devops25.w07.dto.Dish;
-import de.tum.aet.devops25.w07.service.CanteenService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import de.tum.aet.devops26.w06.dto.Dish;
+import de.tum.aet.devops26.w06.service.CanteenService;
 
 import java.util.List;
 
