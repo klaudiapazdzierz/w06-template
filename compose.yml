@@ -49,6 +49,10 @@ services:
       - LLM_API_URL=${LLM_API_URL:-http://host.docker.internal:1234/v1/chat/completions}
       - LLM_MODEL=${LLM_MODEL:-gemma-4-e2b}
       - LLM_API_KEY=${LLM_API_KEY:-}
+      # Set LOGOS_API_KEY in .env to switch to the TUM-hosted Logos
+      # endpoint (openai/gpt-oss-120b). When set, it overrides the
+      # LM Studio defaults above. Unset = LM Studio.
+      - LOGOS_API_KEY=${LOGOS_API_KEY:-}
     extra_hosts:
       - "host.docker.internal:host-gateway"
     ports:

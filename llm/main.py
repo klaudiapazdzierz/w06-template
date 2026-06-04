@@ -8,14 +8,28 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.language_models.llms import LLM
 from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 
-# Environment configuration
-# Points at an OpenAI-compatible chat-completions endpoint.
-# Default targets LM Studio running on the host machine.
-# From inside Docker on macOS/Windows, host.docker.internal resolves to the host.
-API_URL = os.getenv("LLM_API_URL", "http://localhost:1234/v1/chat/completions")
-MODEL_NAME = os.getenv("LLM_MODEL", "gemma-4-e2b")
-# Optional bearer token. LM Studio doesn't require one; the chair API did.
-LLM_API_KEY = os.getenv("LLM_API_KEY") or os.getenv("CHAIR_API_KEY")
+# Environment configuration: pick the upstream provider based on env.
+#
+# If LOGOS_API_KEY is set we point at the TUM Logos endpoint and default
+# to the openai/gpt-oss-120b model. Otherwise we default to LM Studio
+# running on the host (host.docker.internal:1234 from inside Docker on
+# macOS/Windows) with gemma-4-e2b. The LM Studio path can still be
+# overridden by setting LLM_API_URL / LLM_MODEL explicitly.
+LOGOS_API_KEY = os.getenv("LOGOS_API_KEY")
+if LOGOS_API_KEY:
+    # Logos profile: TUM-hosted gpt-oss-120b. Off-campus needs eduVPN.
+    # Hardcoded so a single LOGOS_API_KEY in .env is the only switch
+    # students need to flip.
+    API_URL = "https://logos.aet.cit.tum.de/v1/chat/completions"
+    MODEL_NAME = "openai/gpt-oss-120b"
+    LLM_API_KEY = LOGOS_API_KEY
+else:
+    # LM Studio profile: local model on host. Defaults match compose.yml
+    # so both `docker compose up` and `python main.py` work.
+    API_URL = os.getenv("LLM_API_URL", "http://localhost:1234/v1/chat/completions")
+    MODEL_NAME = os.getenv("LLM_MODEL", "gemma-4-e2b")
+    # LM Studio doesn't require a key; CHAIR_API_KEY is left for back-compat.
+    LLM_API_KEY = os.getenv("LLM_API_KEY") or os.getenv("CHAIR_API_KEY")
 
 # Create FastAPI application instance
 app = FastAPI(

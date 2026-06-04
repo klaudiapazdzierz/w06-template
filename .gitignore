@@ -45,7 +45,8 @@ node_modules/
 .eslintcache
 
 # Environment variables
-.env
+# Note: .env is intentionally tracked as a documented template. Local
+# overrides (with real secrets) belong in .env.local etc.
 .env.local
 .env.development.local
 .env.test.local
