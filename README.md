@@ -154,21 +154,27 @@ The project includes Docker configurations for containerized deployment.
    - LLM Service: [http://localhost:5000](http://localhost:5000)
    - Database: PostgreSQL on port 5432
 
-## Kubernetes Deployment
+## LLM Provider Configuration
 
-The project includes Helm charts for Kubernetes deployment.
+The LLM service (`llm/main.py`) speaks to any OpenAI-compatible `/v1/chat/completions` endpoint. The provider is selected at startup via environment variables — no code changes needed.
 
-### Deploy with Helm
+### TUM Logos (cloud, gpt-oss-120b)
 
-1. Update the `tumid` value in [`helm/canteen-app/values.yaml`](helm/canteen-app/values.yaml):
-   ```yaml
-   tumid: your-tum-id
-   ```
+Set `LOGOS_API_KEY` in your environment (or `.env`). When present, the service automatically targets:
 
-2. Install the Helm chart:
-   ```bash
-   helm install canteen ./helm/canteen-app
-   ```
+- URL: `https://logos.aet.cit.tum.de/v1/chat/completions`
+- Model: `openai/gpt-oss-120b`
+
+Off-campus access requires eduVPN.
+
+### LM Studio (local, default)
+
+If `LOGOS_API_KEY` is not set, the service falls back to LM Studio running on the host. Defaults:
+
+- `LLM_API_URL` → `http://localhost:1234/v1/chat/completions` (use `http://host.docker.internal:1234/...` from inside Docker)
+- `LLM_MODEL` → `gemma-4-e2b`
+
+Both can be overridden via env vars. LM Studio does not require an API key.
 
 ## CI/CD Pipeline
 
