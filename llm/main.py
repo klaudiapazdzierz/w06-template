@@ -230,12 +230,12 @@ if __name__ == "__main__":
     Entry point for `python main.py` invocation.
     Starts Uvicorn server serving this FastAPI app.
 
-    Honors PORT environment variable (default: 5000).
+    Honors PORT environment variable (default: 5001).
     Reload=True enables live-reload during development.
     """
     import uvicorn
 
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.getenv("PORT", 5001))
     
     print(f"Starting LLM Recommendation Service on port {port}")
     print(f"API Documentation available at: http://localhost:{port}/docs")

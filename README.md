@@ -95,7 +95,7 @@ The server API will be available at [http://localhost:8080](http://localhost:808
 cd llm
 python main.py
 ```
-The LLM service will be available at [http://localhost:5000](http://localhost:5000).
+The LLM service will be available at [http://localhost:5001](http://localhost:5001).
 
 ## Development Workflow
 
@@ -151,7 +151,7 @@ The project includes Docker configurations for containerized deployment.
 2. Access the application:
    - Client: [http://localhost:3000](http://localhost:3000)
    - Server: [http://localhost:8080](http://localhost:8080)
-   - LLM Service: [http://localhost:5000](http://localhost:5000)
+   - LLM Service: [http://localhost:5001](http://localhost:5001)
    - Database: PostgreSQL on port 5432
 
 ## LLM Provider Configuration

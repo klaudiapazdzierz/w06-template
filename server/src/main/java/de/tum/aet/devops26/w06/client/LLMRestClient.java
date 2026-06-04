@@ -15,7 +15,7 @@ public class LLMRestClient {
 
     private final RestClient restClient;
 
-    public LLMRestClient(RestClient.Builder builder, @Value("${llm.service.url:http://localhost:5000}") String llmServiceUrl) {
+    public LLMRestClient(RestClient.Builder builder, @Value("${llm.service.url:http://localhost:5001}") String llmServiceUrl) {
         this.restClient = builder
                 .baseUrl(llmServiceUrl)
                 .build();
