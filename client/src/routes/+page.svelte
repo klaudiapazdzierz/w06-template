@@ -96,7 +96,7 @@
 
         {#if meals.length === 0}
             <div class="no-results">
-                <p>Loading menu items…</p>
+                <p>No menu posted for today.</p>
             </div>
         {:else}
             <div class="food-grid">
