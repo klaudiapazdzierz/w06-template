@@ -43,7 +43,7 @@ class LLMRecommendationServiceTest {
         
         String expectedRecommendation = "Margherita Pizza";
         
-        when(llmRestClient.generateRecommendations(
+        when(llmRestClient.getRecommendationFromLLM(
             eq(favoriteMeals), 
             eq(Arrays.asList("Margherita Pizza", "Chicken Curry", "Caesar Salad"))
         )).thenReturn(expectedRecommendation);
@@ -63,7 +63,7 @@ class LLMRecommendationServiceTest {
                 new Dish("Margherita Pizza", "main", List.of("vegetarian"))
         );
         
-        when(llmRestClient.generateRecommendations(any(), any()))
+        when(llmRestClient.getRecommendationFromLLM(any(), any()))
             .thenThrow(new RuntimeException("Service unavailable"));
 
         // When
@@ -79,7 +79,7 @@ class LLMRecommendationServiceTest {
         List<String> favoriteMeals = List.of();
         List<Dish> todayMeals = List.of();
         
-        when(llmRestClient.generateRecommendations(eq(favoriteMeals), eq(List.of())))
+        when(llmRestClient.getRecommendationFromLLM(eq(favoriteMeals), eq(List.of())))
             .thenReturn("");
 
         // When

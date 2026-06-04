@@ -22,12 +22,12 @@ public class LLMRestClient {
     }
 
     /**
-     * Generate recommendations using the REST LLM service
+     * Get a recommendation from the LLM via the REST service.
      * @param favoriteMenu list of user's favorite meal names
      * @param todaysMenu list of today's available meal names
      * @return recommendation string
      */
-    public String generateRecommendations(List<String> favoriteMenu, List<String> todaysMenu) {
+    public String getRecommendationFromLLM(List<String> favoriteMenu, List<String> todaysMenu) {
         try {
             // TODO Create request body
 
